@@ -27,6 +27,8 @@ public class Customer {
     private Long customerId;
     private String firstName;
     private String lastName;
+    private String email;
+    private String gender;
 
     @OneToOne(
             cascade = CascadeType.ALL

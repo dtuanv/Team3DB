@@ -16,15 +16,17 @@ class CustomerRepositoryTest {
     @Test
     public void saveCustomer(){
         Delivery delivery = Delivery.builder()
-                .street("Eupener Stieg")
+                .street("Berliner Tor")
                 .city("Hamburg")
-                .houseNum("4a")
+                .houseNum("18a")
                 .plz(22389)
                 .build();
 
         Customer customer = Customer.builder()
                 .firstName("Tuan")
-                .lastName("Dao")
+                .lastName("Van")
+                .gender("male")
+                .email("test@gmail.com")
                 .delivery(delivery)
                 .build();
         customerRepository.save(customer);

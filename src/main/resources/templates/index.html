@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>The Big Beer Theory</title>
 </head>
 <body>
-
+<div style="justify-items: center">
+    <div>
+        <pre id="hungry" style="text-align: center">Are you really hungry?</pre>
+    </div>
+    <div>
+        <a th:href="@{/database}"><pre style="text-align: center; font-size: 2em"> Click here</pre></a>
+    </div>
+    <div>
+        <img id="logo" src="assets/img/Arrow-down.gif">
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <img class="looper" src="assets/img/fork.png" style="width:100%">
+    </div>
+    <div class="column">
+        <a href="database.html">
+            <img class="looper"  src="assets/img/db_img.png" style="width:100%">
+        </a>
+    </div>
+    <div class="column">
+        <img class="looper" src="assets/img/knife.webp" style="width:100%">
+    </div>
+</div>
 </body>
 </html>
