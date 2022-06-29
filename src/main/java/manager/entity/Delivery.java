@@ -25,7 +25,7 @@ public class Delivery {
     )
     private Long deliveryId;
     private String street;
-    private int houseNum;
+    private String houseNum;
     private int plz;
     private String city;
 

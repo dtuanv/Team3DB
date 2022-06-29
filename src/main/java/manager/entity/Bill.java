@@ -32,6 +32,9 @@ public class Bill {
             name="customer_id",
             referencedColumnName = "customerID"
     )
+
     private Customer customer;
+
+
 
 }
