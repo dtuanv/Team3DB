@@ -1,17 +1,17 @@
 package manager.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
+
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString(exclude = "customer")
 public class Delivery {
     @Id
     @SequenceGenerator(
@@ -28,5 +28,7 @@ public class Delivery {
     private String houseNum;
     private int plz;
     private String city;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "delivery" )
+    private Customer customer;
 
 }

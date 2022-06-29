@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class Customer {
 
     @Id
@@ -31,7 +32,7 @@ public class Customer {
     private String gender;
 
     @OneToOne(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL, fetch = FetchType.LAZY
     )
     @JoinColumn(
             name = "delivery_id",
