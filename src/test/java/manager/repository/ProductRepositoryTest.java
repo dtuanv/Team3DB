@@ -1,6 +1,6 @@
 package manager.repository;
 
-import manager.entity.intern.Food;
+import manager.entity.intern.Product;
 import manager.entity.intern.Ingredients;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class FoodRepositoryTest {
+class ProductRepositoryTest {
     @Autowired
     private FoodRepository foodRepository;
 
@@ -51,12 +50,12 @@ class FoodRepositoryTest {
         ingredientsSet.add(ingredients6);
 
 
-        Food food = Food.builder()
+        Product product = Product.builder()
 
                 .foodName("Heidelbeer-Joghurt-Shake").calorie("104 kcal")
                 .ingredients(ingredientsSet)
                 .build();
-        foodRepository.save(food);
+        foodRepository.save(product);
     }
 
 }

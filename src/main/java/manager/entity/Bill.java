@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,16 +15,22 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Bill {
-    @Id
-    @SequenceGenerator(
+    /*
+   @SequenceGenerator(
             name= " bill_sequence",
             sequenceName = "bill_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.SEQUENCE
+           ,
             generator = "bill_sequence"
-    )
+  )
+
+     */
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long billId;
     @ManyToOne(
            cascade = CascadeType.ALL

@@ -1,6 +1,7 @@
 package manager.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -13,6 +14,7 @@ import javax.transaction.Transactional;
 @Builder
 @ToString(exclude = "customer")
 public class Delivery {
+/*
     @Id
     @SequenceGenerator(
             name= " customer_sequence",
@@ -23,11 +25,16 @@ public class Delivery {
             strategy = GenerationType.SEQUENCE,
             generator = "customer_sequence"
     )
+
+ */
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long deliveryId;
     private String street;
-    private String houseNum;
-    private int plz;
     private String city;
+    private int index;
+    private String houseNum;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "delivery" )
     private Customer customer;
 

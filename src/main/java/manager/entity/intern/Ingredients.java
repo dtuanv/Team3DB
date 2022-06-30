@@ -14,22 +14,28 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 public class Ingredients {
-    @Id
-    @SequenceGenerator(
+ /*
+   @Id
+   @SequenceGenerator(
             name= " ingredients_sequence",
             sequenceName = "ingredients_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "ingredients_sequence"
+            strategy = GenerationType.SEQUENCE
+          ,generator = "ingredients_sequence"
     )
+
+  */
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ingredientsId;
     private String ingredientsName;
     @ManyToMany(
             mappedBy = "ingredients"
     )
-     private Set<Food> food;
+     private Set<Product> product;
     private String amount;
 
 }

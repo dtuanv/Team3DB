@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="responsive-table">
+    <thead class="table-header">
+    <tr>
+        <th  scope="col">First Name</th>
+        <th  scope="col">LastName</th>
+        <th  scope="col">City</th>
+        <th  scope="col">Street</th>
+
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody class="table-row" >
+        <tr th:each="cus : ${customerList}">
+            <td th:text="${cus.firstName}"></td>
+            <td th:text="${cus.lastName}"></td>
+            <td th:text="${cus.delivery.city}"></td>
+            <td th:text="${cus.delivery.street}"></td>
+        </tr>
+
+
+    </tbody>
+
+</table>
+</body>
+</html>
