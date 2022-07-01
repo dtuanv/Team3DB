@@ -21,7 +21,8 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
     @RequestMapping(value={"/customer"})
-    public String displayDatabase(Customer customer, Model model, @RequestParam String check){
+    public String displayDatabase(Customer customer, Model model
+            , @RequestParam(name="check", required = false) String check){
         model.addAttribute("customer",new Customer());
         model.addAttribute("delivery", new Delivery());
 

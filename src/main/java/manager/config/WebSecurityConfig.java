@@ -1,4 +1,4 @@
-/*package manager.config;
+package manager.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,10 +13,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .mvcMatchers("/home").permitAll()
-                .mvcMatchers("/manager").permitAll()
-                .mvcMatchers("customer").permitAll()
+                .mvcMatchers("/manager").authenticated()
+                .mvcMatchers("/customer").permitAll()
+                .mvcMatchers("/login").permitAll()
                 .and()
-                .formLogin()
+                .formLogin().loginPage("/login").defaultSuccessUrl("/manager")
+                .failureUrl("/login?error=check").permitAll()
+                .and().logout().logoutSuccessUrl("/home").invalidateHttpSession(true).permitAll()
 
                 .and().httpBasic();
 
@@ -26,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication()
-                .withUser("user").password("12345").roles("USER")
+                .withUser("team3").password("12345").roles("USER")
                 .and()
                 .withUser("dtuan").password("54321").roles("ADMIN")
                 .and()
@@ -36,5 +39,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
- */
+
 
