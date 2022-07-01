@@ -17,8 +17,12 @@
 
         <li class="errorMessage" th:each="error : ${#fields.errors('delivery.*')}"
             th:text="${error}"></li>
-  <!--      <li class="errorMessage" th:if="${#fields.hasErrors('customer.lastName')}" th:errors="*{lastName}"></li>
--->
+        <li class="errorMessage"
+            th:if="${!#strings.isEmpty(errorMessage)}"
+            th:text="${errorMessage}"><li/>
+
+        <!--      <li class="errorMessage" th:if="${#fields.hasErrors('customer.lastName')}" th:errors="*{lastName}"></li>
+      -->
     </ul>
     <div class="title">Welcome</div>
     <div class="subtitle">Let's create your account! And order something tasty</div>
