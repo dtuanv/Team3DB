@@ -34,7 +34,7 @@ public class CustomerController {
         customerService.isSavedCustomer(customer,delivery);
         return "redirect:/customer";
     }
-    @GetMapping("/showCustomer")
+    @GetMapping("/manager")
     public String showCustomer(Model model){
         List<Customer> customerList = customerRepository.findCustomerWithAddress();
         model.addAttribute("customerList", customerList);
