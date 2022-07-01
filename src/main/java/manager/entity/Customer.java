@@ -1,19 +1,18 @@
 package manager.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class Customer {
 /*
     @Id
@@ -31,10 +30,15 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
+    @NotBlank(message = "First name must be not blank")
+    @Size(min=2, message = "please write a correct name")
     private String firstName;
+   // @NotBlank(message = "Last name must be not blank")
+    @Size(min=2, message = "please write a correct name")
     private String lastName;
-
+    @Email(message = "please write a correct mail")
     private String email;
+
     private String gender;
 
     @OneToOne(

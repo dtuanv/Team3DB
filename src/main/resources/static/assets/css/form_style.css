@@ -130,7 +130,7 @@ body {
 .submit:active {
     background-color: #06b;
 }
-.message{
+.errorMessage{
  list-style-type:none;
   position: relative;
   padding: 0.5rem 0.5rem;

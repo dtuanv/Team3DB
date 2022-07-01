@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -31,9 +33,15 @@ public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long deliveryId;
+    @NotBlank(message = "Street must be not blank")
+    @Size(min=3, message = "please write a correct Street")
     private String street;
+    @NotBlank(message = "House must be not blank")
     private String houseNum;
+
     private int postcode;
+    @NotBlank(message = "Postcode must be not blank")
+    @Size(min=3, message = "please write a correct city")
     private String city;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "delivery" )
     private Customer customer;
