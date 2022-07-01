@@ -12,10 +12,10 @@ import java.util.Set;
 @SpringBootTest
 class ProductRepositoryTest {
     @Autowired
-    private FoodRepository foodRepository;
+    ProductRepository productRepository;
 
     @Test
-    public void saveFood(){
+    public void saveProduct(){
         Ingredients ingredients = Ingredients.builder()
 
                 .ingredientsName("Joghurt") .amount("600g")
@@ -52,10 +52,10 @@ class ProductRepositoryTest {
 
         Product product = Product.builder()
 
-                .foodName("Heidelbeer-Joghurt-Shake").calorie("104 kcal")
+                .productName("Heidelbeer-Joghurt-Shake").calorie("104 kcal")
                 .ingredients(ingredientsSet)
                 .build();
-        foodRepository.save(product);
+        productRepository.save(product);
     }
 
 }

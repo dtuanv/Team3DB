@@ -32,9 +32,9 @@ public class Delivery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long deliveryId;
     private String street;
-    private String city;
-    private int index;
     private String houseNum;
+    private int postcode;
+    private String city;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "delivery" )
     private Customer customer;
 

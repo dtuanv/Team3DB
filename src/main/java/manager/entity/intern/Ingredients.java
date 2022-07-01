@@ -32,10 +32,11 @@ public class Ingredients {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ingredientsId;
     private String ingredientsName;
+     private String amount;
     @ManyToMany(
             mappedBy = "ingredients"
     )
      private Set<Product> product;
-    private String amount;
+
 
 }

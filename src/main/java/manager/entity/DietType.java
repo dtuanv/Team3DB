@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -13,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FoodGroup {
+public class DietType {
   /* @Id
     @SequenceGenerator(
             name= " groupFood_sequence",
@@ -29,6 +28,6 @@ public class FoodGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long groupFoodId;
+    private Long dietTypeId;
     private String name;
 }
