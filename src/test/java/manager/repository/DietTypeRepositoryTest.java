@@ -1,21 +1,23 @@
 package manager.repository;
 
-import manager.entity.intern.Product;
+import manager.entity.intern.DietType;
 import manager.entity.intern.Ingredients;
+import manager.entity.intern.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class ProductRepositoryTest {
+class DietTypeRepositoryTest {
     @Autowired
-    ProductRepository productRepository;
-
+    private DietTypeRepository dietTypeRepository;
     @Test
-    public void saveProduct(){
+    public void saveAll(){
         Ingredients ingredients = Ingredients.builder()
 
                 .ingredientsName("Joghurt") .amount("600g")
@@ -50,15 +52,16 @@ class ProductRepositoryTest {
         ingredientsSet.add(ingredients6);
 
 
-        Product product = Product.builder()
+       Product product = Product.builder()
 
-                    .productName("Heidelbeer-Joghurt-Shake").calorie("104 kcal")
+                .productName("Heidelbeer-Joghurt-Shake").calorie("104 kcal")
                 .ingredients(ingredientsSet)
                 .build();
-        productRepository.save(product);
+        DietType dietType = DietType.builder()
+                .name("Low-Calorie")
+                .productList(List.of(product))
+        .build();
+        dietTypeRepository.save(dietType);
     }
-
-
-
 
 }

@@ -16,10 +16,14 @@ class CustomerDeliveryTest {
     @Transactional
     public void getCustomerDelivery(){
         List<Customer> customerList = customerRepository.findCustomerWithAddress();
-
-
         System.out.println(customerList);
-
+    }
+    @Test
+    @Transactional
+    public void getCustomerDeliveryWithFilter(){
+        String search ="Van";
+        List<Customer> customerList = customerRepository.findCustomerWithFilter(search);
+        System.out.println(customerList);
     }
 
 }

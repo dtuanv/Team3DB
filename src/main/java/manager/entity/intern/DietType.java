@@ -1,4 +1,4 @@
-package manager.entity;
+package manager.entity.intern;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -30,4 +32,14 @@ public class DietType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dietTypeId;
     private String name;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="product_diet_type",
+            joinColumns = @JoinColumn(name = "diet_type_id",
+                                    referencedColumnName = "dietTypeId"),
+                                    inverseJoinColumns = @JoinColumn(name="product_id",
+                                    referencedColumnName = "productId")
+            )
+    private List<Product> productList;
+
 }
