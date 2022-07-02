@@ -126,7 +126,9 @@ body {
     text-align: center;
     width: 100%;
 }
-
+.submit:hover{
+    background-color: #3989ea;
+}
 .submit:active {
     background-color: #06b;
 }
