@@ -10,4 +10,9 @@ public class HomeController {
     public String displayHome(){
         return "index.html";
     }
+
+    @RequestMapping("/succsesful")
+    public String displaySuccesful(){
+        return "succsesful.html";
+    }
 }
