@@ -11,19 +11,19 @@
 <body>
 
 <div class="form">
-    <ul>
-       <li class="errorMessage" th:each="error1 : ${#fields.errors('customer.*')}"
-            th:text="${error1}"></li>
+<!--    <ul>-->
+<!--       <li class="errorMessage" th:each="error1 : ${#fields.errors('customer.*')}"-->
+<!--            th:text="${error1}"></li>-->
 
-        <li class="errorMessage" th:each="error : ${#fields.errors('delivery.*')}"
-            th:text="${error}"></li>
-        <li class="errorMessage"
-            th:if="${!#strings.isEmpty(errorMessage)}"
-            th:text="${errorMessage}"><li/>
+<!--        <li class="errorMessage" th:each="error : ${#fields.errors('delivery.*')}"-->
+<!--            th:text="${error}"></li>-->
+<!--        <li class="errorMessage"-->
+<!--            th:if="${!#strings.isEmpty(errorMessage)}"-->
+<!--            th:text="${errorMessage}"><li/>-->
 
-        <!--      <li class="errorMessage" th:if="${#fields.hasErrors('customer.lastName')}" th:errors="*{lastName}"></li>
-      -->
-    </ul>
+<!--        &lt;!&ndash;      <li class="errorMessage" th:if="${#fields.hasErrors('customer.lastName')}" th:errors="*{lastName}"></li>-->
+<!--      &ndash;&gt;-->
+<!--    </ul>-->
     <div class="title">Welcome</div>
     <div class="subtitle">Let's create your account! And order something tasty</div>
     <form th:action="@{/saveCustomer}" method="post" >
@@ -31,45 +31,45 @@
     <div th:object="${customer}" >
 
     <div class="input-container ic1">
-        <input th:field="*{firstName}" class="input" type="text" placeholder=" " />
+        <input th:field="*{firstName}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut"></div>
         <label class="placeholder">First name</label>
     </div>
     <div class="input-container ic2">
-        <input th:field="*{lastName}" class="input" type="text" placeholder=" " />
+        <input th:field="*{lastName}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut"></div>
         <label  class="placeholder">Last name</label>
     </div>
     <div class="input-container ic2">
-        <input th:field="*{email}" class="input" type="text" placeholder=" " />
+        <input th:field="*{email}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label  class="placeholder">Email</label>
     </div>
 
     <div class="input-container ic2">
-        <input th:field="*{gender}" class="input" type="text" placeholder=" " />
+        <input th:field="*{gender}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label  class="placeholder">Gender</label>
     </div>
     </div>
         <div th:object="${delivery}">
         <div class="input-container ic2">
-        <input th:field="*{city}" class="input" type="text" placeholder=" " />
+        <input th:field="*{city}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label class="placeholder">City</label>
     </div>
     <div class="input-container ic2">
-        <input th:field="*{postcode}" class="input" type="text" placeholder=" " />
+        <input th:field="*{postcode}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label  class="placeholder">Postcode</label>
     </div>
     <div class="input-container ic2">
-        <input th:field="*{street}" class="input" type="text" placeholder=" " />
+        <input th:field="*{street}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label class="placeholder">Street</label>
     </div>
         <div class="input-container ic2">
-        <input th:field="*{houseNum}" class="input" type="text" placeholder=" " />
+        <input th:field="*{houseNum}" required="required" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label class="placeholder">Number</label>
     </div>
