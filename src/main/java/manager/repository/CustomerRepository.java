@@ -38,7 +38,7 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
     public List<Customer> findCustomerWithEmail(String email);
 
     @Query(value="SELECT * FROM (SELECT * FROM customer c LEFT JOIN delivery " +
-            "USING(delivery_id) ) Cu WHERE gender LIKE %?1%"  ,
+            "USING(delivery_id) ) Cu WHERE gender = :gender"  ,
             nativeQuery = true)
     public List<Customer> findCustomerWithGender(String gender);
     @Query(value="SELECT * FROM (SELECT * FROM customer c LEFT JOIN delivery " +
