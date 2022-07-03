@@ -19,7 +19,7 @@ class CustomerRepositoryTest {
                 .street("Konstaner Straße")
                 .city("Damstadt")
                 .houseNum("17f")
-                .postcode(22556)
+                .postcode("22556")
                 .build();
 
         Customer customer = Customer.builder()
