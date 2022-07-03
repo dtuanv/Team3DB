@@ -39,6 +39,12 @@ public class ManagerController {
 
         return "manager.html";
     }
+    @RequestMapping("/delete")
+    public String deleteCustomer(@RequestParam(value = "customerId",required = false) Long customerId){
+        customerRepository.deleteById(customerId);
+        return "redirect:/manager";
+
+    }
     @GetMapping(value={"/search"})
     public String showWithFirstName(@Param("fistName") String firstName
                                     ,@Param("lastName") String lastName

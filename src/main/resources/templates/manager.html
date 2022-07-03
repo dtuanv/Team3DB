@@ -56,6 +56,7 @@
                     <td th:text="${inf.email}"></td>
                     <td th:text="${inf.gender}"></td>
                     <td th:text="${inf.delivery.city}"></td>
+                    <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-style btn-style-3">DELETE</a></td>
 
                 </tr>
                 </tbody>
