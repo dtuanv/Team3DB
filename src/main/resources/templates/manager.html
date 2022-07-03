@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/css/succsesful.css">
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
     <title>Manager</title>
     <style>
@@ -44,7 +45,6 @@
                     <th><input type="text" class="form-control" name = "email" th:value="${email}" placeholder="Email" ></th>
                     <th><input type="text" class="form-control" name="gender" th:value="${gender}" placeholder="Gender" ></th>
                     <th><input type="text" class="form-control" name="city" th:value="${city}" placeholder="City" ></th>
-
                     </form>
 
                 </tr>
@@ -56,7 +56,7 @@
                     <td th:text="${inf.email}"></td>
                     <td th:text="${inf.gender}"></td>
                     <td th:text="${inf.delivery.city}"></td>
-                    <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-style btn-style-3">DELETE</a></td>
+                    <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-danger btn-style-2"><i class="gg-trash"></i></a></td>
 
                 </tr>
                 </tbody>
