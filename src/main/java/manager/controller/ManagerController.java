@@ -32,6 +32,11 @@ public class ManagerController {
     public String showCustomer(Model model){
         List<Customer> customerList = managerService.getCustomer();
         model.addAttribute("customerList", customerList);
+      int  count = customerRepository.countCustomerWithAddress();
+        System.out.println("Count: " + count);
+        model.addAttribute("count",count);
+
+
         return "manager.html";
     }
     @GetMapping(value={"/search"})
@@ -44,12 +49,9 @@ public class ManagerController {
         String check = null;
         System.out.println("firstName: " + firstName);
         System.out.println("lastName: "+lastName);
-
-    /*  int  count =  searchRepository.countCustomer(firstName);
-        System.out.println("Count: " + count);
-        model.addAttribute("count",count);
-
-     */
+        if(firstName.isEmpty()&& lastName.isEmpty() && email.isEmpty() && gender.isEmpty() && city.isEmpty()){
+            return "redirect:/manager";
+        }
 
         if(!firstName.isEmpty()){
             List<Customer> customerList = managerService.getCustomerWithFilter(firstName);
@@ -96,6 +98,7 @@ public class ManagerController {
             model.addAttribute("count",count);
             return "manager.html";
         }
+
 
      //   List<Customer> customerList = managerService.getCustomerWithFilter(firstName,lastName);
 

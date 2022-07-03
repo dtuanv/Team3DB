@@ -20,7 +20,7 @@ public interface SearchRepository extends JpaRepository<Customer,Long> {
             "USING(delivery_id) ) Cu WHERE email LIKE %?1%"  ,
             nativeQuery = true)
     public int countCustomerWithEmail(String search);
-    @Query(value="SELECT Count(first_name) FROM (SELECT * FROM customer c LEFT JOIN delivery " +
+    @Query(value="SELECT Count(gender) FROM (SELECT * FROM customer c LEFT JOIN delivery " +
             "USING(delivery_id) ) Cu WHERE gender LIKE %?1%"  ,
             nativeQuery = true)
     public int countCustomerWithGender(String search);

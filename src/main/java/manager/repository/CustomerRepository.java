@@ -12,6 +12,9 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
     @Query(value = "select * from customer c inner join delivery  d " +
             "ON c.delivery_id = d.delivery_id", nativeQuery = true)
     public List<Customer> findCustomerWithAddress();
+    @Query(value = "select count(first_name) from customer c inner join delivery  d " +
+            "ON c.delivery_id = d.delivery_id ", nativeQuery = true)
+    public int countCustomerWithAddress();
  /*   @Query(value="SELECT * FROM (SELECT * FROM customer c LEFT JOIN delivery " +
             "USING(delivery_id) ) Cu WHERE first_name LIKE %?1%" +
             " OR last_name LIKE %?2% OR email LIKE %?3% OR gender LIKE %?4% OR city LIKE %?5%"
