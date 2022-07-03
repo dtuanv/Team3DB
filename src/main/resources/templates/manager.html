@@ -16,20 +16,6 @@
     </style>
 </head>
 <body>
-
-<div id="jquery-script-menu">
-    <div class="jquery-script-center">
-        <ul>
-            <li><a href="https://www.jqueryscript.net/table/filter-each-column.html">Download This Plugin</a></li>
-            <li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
-        </ul><div id="carbon-block"></div>
-        <div class="jquery-script-ads"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* jQuery_demo */
-google_ad_slot = "2780937993";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
 </script>
             <script type="text/javascript"
                     src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
@@ -39,6 +25,8 @@ google_ad_height = 90;
 </div>
 <div class="container">
     <hr>
+    <h3 style="font-size: 2em" th:text="'Result : ' +${count}"> <span id="rowcount"></span></h3>
+    <a th:href="@{/logout}">Logout</a>
     <div class="row">
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
@@ -77,9 +65,7 @@ google_ad_height = 90;
                 </tr>
                 </tbody>
             </table>
-          <p th:text="'No.of Rows :' +${count}"> <span id="rowcount"></span></p>
         </div>
-        <a th:href="@{/logout}">Logout</a>
     </div>
 </div>
 
