@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
@@ -39,8 +40,7 @@ public class Delivery {
     @NotBlank(message = "House must be not blank")
     private String houseNum;
 
-    private int postcode;
-    @NotBlank(message = "Postcode must be not blank")
+    private String postcode ;
     @Size(min=3, message = "please write a correct city")
     private String city;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "delivery" )
