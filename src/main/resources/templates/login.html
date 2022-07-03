@@ -4,59 +4,86 @@
     <meta charset="UTF-8">
     <title>Login | My Garden</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form_admin_style.css">
+
 
 
 </head>
 <body>
 
-<!-- login block -->
-    <div class="container-login">
-        <div class="screen">
-        <div class="screen__content">
+<!--&lt;!&ndash; login block &ndash;&gt;-->
+<!--    <div class="container-login">-->
+<!--        <div class="screen">-->
+<!--        <div class="screen__content">-->
 
-            <form class="login" th:action="@{/login}" method="post" style="list-style-type: none">
-                <!-- ErrorMessage -->
-                <li class="errorMessage"
-                    th:if="${!#strings.isEmpty(errorMessage)}"
-                    th:text="${errorMessage}"><li/>
-                <div class="login__field">
-                    <i class="login__icon fas fa-user"></i>
+<!--            <form class="login" th:action="@{/login}" method="post" style="list-style-type: none">-->
+<!--                &lt;!&ndash; ErrorMessage &ndash;&gt;-->
+<!--                <li class="errorMessage"-->
+<!--                    th:if="${!#strings.isEmpty(errorMessage)}"-->
+<!--                    th:text="${errorMessage}"><li/>-->
+<!--                <div class="login__field">-->
+<!--                    <i class="login__icon fas fa-user"></i>-->
 
-                    <input type="text" class="login__input" name="username" id="username" placeholder="User name / Email">
-                </div>
-                <div class="login__field">
-                    <i class="login__icon fas fa-lock"></i>
-                    <input type="password" class="login__input" name="password" id="password" placeholder="Password">
-                </div>
+<!--                    <input type="text" class="login__input" name="username" id="username" placeholder="User name / Email">-->
+<!--                </div>-->
+<!--                <div class="login__field">-->
+<!--                    <i class="login__icon fas fa-lock"></i>-->
+<!--                    <input type="password" class="login__input" name="password" id="password" placeholder="Password">-->
+<!--                </div>-->
 
-                <button class="button login__submit">
-                    <span class="button__text">Log In Now</span>
-                    <i class="button__icon fas fa-chevron-right"></i>
-                </button>
-
-
-            </form>
-            <div class="social-login">
-                <h3>log in via</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-login__icon fab fa-instagram"></a>
-                    <a href="#" class="social-login__icon fab fa-facebook"></a>
-                    <a href="#" class="social-login__icon fab fa-twitter"></a>
-                </div>
-            </div>
-        </div>
-        <div class="screen__background">
-            <span class="screen__background__shape screen__background__shape4"></span>
-            <span class="screen__background__shape screen__background__shape3"></span>
-            <span class="screen__background__shape screen__background__shape2"></span>
-            <span class="screen__background__shape screen__background__shape1"></span>
-        </div>
-    </div>
-    </div>
+<!--                <button class="button login__submit">-->
+<!--                    <span class="button__text">Log In Now</span>-->
+<!--                    <i class="button__icon fas fa-chevron-right"></i>-->
+<!--                </button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
 <!-- //login block -->
+    <div class="subtitle_1">Log in if you have Admin permissions</div>
+    <form class="form_admin" th:action="@{/login}" method="post" style="list-style-type: none">
+        <div class="input-container ic1">
+            <input type="text" class="login__input" name="username" id="username" placeholder="User name / Email">
+        </div>
+        <div class="input-container ic2">
+            <input type="password" class="login__input" name="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit" value="Submit" class="submit_admin">Submit</button>
+        <p align="right"><a style="float:right;text-align:right;text-decoration: none" th:href="@{/logout}">Home</a></p>
+    </form>
 
 
- 
+
 
 </body>
 </html>
+
+
+
+<!--<div class="container-login">-->
+<!--    <div class="screen">-->
+<!--        <div class="screen__content">-->
+
+<!--            <form class="login" th:action="@{/login}" method="post" style="list-style-type: none">-->
+<!--                &lt;!&ndash; ErrorMessage &ndash;&gt;-->
+<!--                <li class="errorMessage"-->
+<!--                    th:if="${!#strings.isEmpty(errorMessage)}"-->
+<!--                    th:text="${errorMessage}"><li/>-->
+<!--                <div class="login__field">-->
+<!--                    <i class="login__icon fas fa-user"></i>-->
+
+<!--                    <input type="text" class="login__input" name="username" id="username" placeholder="User name / Email">-->
+<!--                </div>-->
+<!--                <div class="login__field">-->
+<!--                    <i class="login__icon fas fa-lock"></i>-->
+<!--                    <input type="password" class="login__input" name="password" id="password" placeholder="Password">-->
+<!--                </div>-->
+
+<!--                <button class="button login__submit">-->
+<!--                    <span class="button__text">Log In Now</span>-->
+<!--                    <i class="button__icon fas fa-chevron-right"></i>-->
+<!--                </button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

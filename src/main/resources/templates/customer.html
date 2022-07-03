@@ -48,19 +48,19 @@
 
     <div class="input-container ic2">
         <input th:field="*{gender}" required="required" class="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
+        <div class="cut cut-long"></div>
         <label  class="placeholder">Gender</label>
     </div>
     </div>
         <div th:object="${delivery}">
         <div class="input-container ic2">
         <input th:field="*{city}" required="required" class="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
+        <div class="cut cut-small"></div>
         <label class="placeholder">City</label>
     </div>
     <div class="input-container ic2">
         <input th:field="*{postcode}" required="required" class="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
+        <div class="cut"></div>
         <label  class="placeholder">Postcode</label>
     </div>
     <div class="input-container ic2">
@@ -70,12 +70,12 @@
     </div>
         <div class="input-container ic2">
         <input th:field="*{houseNum}" required="required" class="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
+        <div class="cut cut-long"></div>
         <label class="placeholder">Number</label>
     </div>
         </div>
     <button type="submit" value="Submit" class="submit">Submit</button>
-
+        <p align="right"><a style="float:right;text-align:right; text-decoration: none" th:href="@{/logout}">Home</a></p>
     </form>
 
 </div>
