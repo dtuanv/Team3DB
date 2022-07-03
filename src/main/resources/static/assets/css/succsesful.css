@@ -32,3 +32,37 @@ img{
 .submit:active {
     background-color: #06b;
 }
+.clear {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 0%
+    margin-top: 5%;
+
+    // outline: 0;
+    text-align: center;
+    width: 10%;
+}
+.clear:hover{
+    background-color: #3989ea;
+}
+.clear:active {
+    background-color: #06b;
+}
+.nav {
+    display:inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+p{
+display: inline;
+}
+.right{
+float: right;
+}
+
