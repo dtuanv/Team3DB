@@ -11,7 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class DietTypeRepositoryTest {
     @Autowired
@@ -61,6 +60,7 @@ class DietTypeRepositoryTest {
                 .name("Low-Calorie")
                 .productList(List.of(product))
         .build();
+
         dietTypeRepository.save(dietType);
     }
 

@@ -11,8 +11,5 @@ public class HomeController {
         return "index.html";
     }
 
-    @RequestMapping("/succsesful")
-    public String displaySuccesful(){
-        return "succsesful.html";
-    }
+
 }

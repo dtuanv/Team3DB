@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -43,6 +44,4 @@ public class Product {
 
     private Set<Ingredients> ingredients;
     private String calorie;
-
-
 }

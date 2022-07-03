@@ -52,18 +52,30 @@ google_ad_height = 90;
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr class="filters">
-                    <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Username" disabled></th>
+
+                    <form th:action="@{/search}" name="search">
+                    <th ><input type="text" class="form-control"
+                   name = "firstName" th:value="${firstName}" placeholder="First Name" ></th>
+                        <input type="submit" value="Search" />
+
+                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Last Name" ></th>
+
+                    <th><input type="text" class="form-control" name = "email" th:value="${email}" placeholder="Email" ></th>
+                    <th><input type="text" class="form-control" name="gender" th:value="${gender}" placeholder="Gender" ></th>
+                    <th><input type="text" class="form-control" name="city" th:value="${city}" placeholder="City" ></th>
+
+                    </form>
+
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Prakhar</td>
-                    <td>Srivastava</td>
-                    <td>@Prakhar</td>
+                <tr th:each="inf : ${customerList}">
+                    <td th:text="${inf.firstName}"></td>
+                    <td th:text="${inf.lastName}"></td>
+                    <td th:text="${inf.email}"></td>
+                    <td th:text="${inf.gender}"></td>
+                    <td th:text="${inf.delivery.city}"></td>
+
                 </tr>
                 <tr>
                     <td>2</td>
@@ -79,7 +91,7 @@ google_ad_height = 90;
                 </tr>
                 </tbody>
             </table>
-            <p>No.of Rows : <span id="rowcount"></span></p>
+          <p th:text="'No.of Rows :' +${count}"> <span id="rowcount"></span></p>
         </div>
         <a th:href="@{/logout}">Logout</a>
     </div>

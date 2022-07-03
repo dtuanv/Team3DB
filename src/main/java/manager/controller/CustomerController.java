@@ -29,12 +29,16 @@ public class CustomerController {
         String message = null;
         if(check != null){
             message = "Thank you!!!";
+
         }
         model.addAttribute("errorMessage",message);
 
         return "customer.html";
     }
-
+    @RequestMapping("/successful")
+    public String displaySuccessful(){
+        return "successful.html";
+    }
 
     @PostMapping("/saveCustomer")
     public String saveCustomer(Model model,
@@ -48,15 +52,10 @@ public class CustomerController {
         }
 
         customerService.isSavedCustomer(customer,delivery);
-        return "redirect:/customer?check=1";
+        return "redirect:/successful";
+     //   return "redirect:/customer?check=1";
     }
-    @GetMapping("/manager")
-    public String showCustomer(Model model){
-        List<Customer> customerList = customerRepository.findCustomerWithAddress();
-        model.addAttribute("customerList", customerList);
-        return "manager.html";
 
-    }
 
 
 
