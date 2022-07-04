@@ -31,7 +31,7 @@ public class DietType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dietTypeId;
-    private String name;
+    private String dietTypeName;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(

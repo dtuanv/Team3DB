@@ -41,7 +41,7 @@
                     <th ><input type="text" class="form-control"
                                 name = "firstName" th:value="${firstName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear">Search</button>
-                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Category" ></th>
+                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
                         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                             <option value="1">Nothing</option>
@@ -55,14 +55,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="inf : ${customerList}">
-                <td th:text="${inf.firstName}"></td>
-                <td th:text="${inf.lastName}"></td>
+            <tr th:each="inf : ${product}" >
+            <!--    <i th:each="pro: ${(productList)}">
+             <td th:text="${pro.productName}"></td>
+            -->
+                <td th:text="${inf.productName}"></td>
+                <td th:text="${inf.calorie}"></td>
+
+                </i>
+       <!--         <td th:text="${inf.lastName}"></td>
                 <td th:text="${inf.email}"></td>
                 <td th:text="${inf.gender}"></td>
                 <td th:text="${inf.delivery.city}"></td>
                 <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-danger btn-style-2"><i class="gg-trash"></i></a></td>
-
+-->
             </tr>
             </tbody>
         </table>
