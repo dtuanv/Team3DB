@@ -46,17 +46,12 @@
                     <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <a th:href="@{/is?check=cal}" >  Low_Calorie </a>
-                            <option value="2">Vegetarisch</option>
-                            <option value="3">Low-Fat</option>
-                            <option value="3">Glutenfrei und Vegetarisch</option>
-                            <option value="3">Laktosefrei</option>
-                            <option value="3">Frutarian</option>
-                            <option value="3">Hight Protein</option>
-                            <option value="3">Fleisch</option>
-                        </select>
-                        <label for="floatingSelect">Category</label>
+                    <td><select name="forma" id='SelectOption'>
+                        <option value="Home"><a href="home.php">Home</a></option>
+                        <option value="Costumers"><a href="contact.php">Costumers</a></option>
+                        <option value="Sitemap"><a href="sitemap.php">Sitemap</a></option>
+                    </select></td><td>
+<!--                        <label for="floatingSelect">Category</label>-->
                     </div></th>
                 </form>
 
@@ -64,19 +59,19 @@
             </thead>
             <tbody>
             <tr th:each="inf : ${product}" >
-            <!--    <i th:each="pro: ${(productList)}">
-             <td th:text="${pro.productName}"></td>
-            -->
+                <!--    <i th:each="pro: ${(productList)}">
+                 <td th:text="${pro.productName}"></td>
+                -->
                 <td th:text="${inf.productName}"></td>
                 <td th:text="${inf.calorie}"></td>
 
                 </i>
-       <!--         <td th:text="${inf.lastName}"></td>
-                <td th:text="${inf.email}"></td>
-                <td th:text="${inf.gender}"></td>
-                <td th:text="${inf.delivery.city}"></td>
-                <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-danger btn-style-2"><i class="gg-trash"></i></a></td>
--->
+                <!--         <td th:text="${inf.lastName}"></td>
+                         <td th:text="${inf.email}"></td>
+                         <td th:text="${inf.gender}"></td>
+                         <td th:text="${inf.delivery.city}"></td>
+                         <td><a th:href="@{/delete(customerId=${inf.customerId})}" class="btn btn-danger btn-style-2"><i class="gg-trash"></i></a></td>
+         -->
             </tr>
             </tbody>
         </table>
@@ -114,6 +109,21 @@ try {
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  document.getElementById('SelectOption').addEventListener('change', function() {
+  val = $( "#SelectOption" ).val();
+
+  console.log(val)
+  if(val === 'Home') {
+    window.open('','_blank');
+    }
+  if(val === 'Costumers') {
+    window.open('customer', '_blank');
+  }
+  if (val === 'Sitemap') {
+    window.open('sitemap.php', '_blank');
+  }
+});
 
 </script>
 </body>
