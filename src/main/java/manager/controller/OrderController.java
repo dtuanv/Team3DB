@@ -22,7 +22,18 @@ public class OrderController {
     @Autowired
    private ProductRepository productRepository;
 
+
     @RequestMapping("/order")
+        public String display(Model model){
+
+        List<Product> product = productRepository.getAllProduct();
+        model.addAttribute("product",product);
+        return "orders.html";
+
+        }
+
+
+    @RequestMapping("/is")
     public String displayOrder(Model model, @RequestParam(name="check",required = false)int check){
      /*   List<DietType> dietTypeList = dietTypeRepository.getDietName();
        List<DietType> dietTypeList = orderRepository.getDietName();
