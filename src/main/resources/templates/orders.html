@@ -46,10 +46,16 @@
                     <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
-                    <td><select class="form-select" aria-label="Floating label select example" name="forma" id='SelectOption'>
-                        <option value="Home"><a href="home.php">Home</a></option>
-                        <option value="Costumers"><a href="contact.php">Costumers</a></option>
-                        <option value="Sitemap"><a href="sitemap.php">Sitemap</a></option>
+                    <td><select name="forma" id='SelectOption'>
+
+                        <option value="1"><a href="contact.php">Low-Calorie</a></option>
+                        <option value="2"><a href="contact.php">Vergetarisch</a></option>
+                        <option value="3"><a href="contact.php">Low-Fat</a></option>
+                        <option value="4"><a href="contact.php">Glutenfrei</a></option>
+                        <option value="5"><a href="contact.php">Flutarian</a></option>
+                        <option value="6"><a href="contact.php">Hight-Protein</a></option>
+                        <option value="7"><a href="contact.php">Fleisch</a></option>
+
                     </select></td><td>
 <!--                        <label for="floatingSelect">Category</label>-->
                     </div></th>
@@ -65,6 +71,7 @@
                 <td th:text="${inf.productName}"></td>
                 <td th:text="${inf.calorie}"></td>
 
+                </i>
                 <!--         <td th:text="${inf.lastName}"></td>
                          <td th:text="${inf.email}"></td>
                          <td th:text="${inf.gender}"></td>
@@ -116,11 +123,27 @@ try {
   if(val === 'Home') {
     window.open('','_blank');
     }
-  if(val === 'Costumers') {
-    window.open('customer', '_blank');
+  if(val === '1') {
+    window.open('is?check=1', '_blank');
+  }
+  if(val === '2') {
+    window.open('is?check=2', '_blank');
+  }if(val === '3') {
+    window.open('is?check=3', '_blank');
+  }if(val === '4') {
+    window.open('is?check=4', '_blank');
+  }if(val === '5') {
+    window.open('is?check=5', '_blank');
+  }
+
+  if(val === '6') {
+    window.open('is?check=6', '_blank');
+  }
+  if(val === '7') {
+    window.open('is?check=7', '_blank');
   }
   if (val === 'Sitemap') {
-    window.open('https://www.youtube.com/watch?v=oRdxUFDoQe0&list=RDMM&index=7&ab_channel=michaeljacksonVEVO', '_blank');
+    window.open('sitemap.php', '_blank');
   }
 });
 
