@@ -19,22 +19,22 @@ class DietTypeRepositoryTest {
     @Test
     public void saveAll(){
         Ingredients ingredients = Ingredients.builder()
-                .ingredientsName("Schweineschnitzel") .amount("600 g")
+                .ingredientsName("Wasser") .amount("1 Liter")
 
                 .build();
         Ingredients ingredients2 = Ingredients.builder()
 
-                .ingredientsName("Pimentkörner").amount("4")
+                .ingredientsName("Bohnen").amount("200g")
                 .build();
         Ingredients ingredients3 = Ingredients.builder()
 
-                .ingredientsName("Knoblauchzehe") .amount("1")
+                .ingredientsName("Zucker") .amount("50g")
                 .build();
         Ingredients ingredients4 = Ingredients.builder()
 
-                .ingredientsName("schwarzer Pfeffer") .amount("1 TL")
+                .ingredientsName("Ngon Qua") .amount("1 TL")
                 .build();
-        Ingredients ingredients5 = Ingredients.builder()
+/*        Ingredients ingredients5 = Ingredients.builder()
 
                 .ingredientsName("Koriander") .amount("1/4 TL")
                 .build();
@@ -82,15 +82,17 @@ class DietTypeRepositoryTest {
 
                 .ingredientsName("Gehackte Petersilie") .amount("2 EL")
                 .build();
+
+ */
         Set<Ingredients> ingredientsSet = new HashSet<>();
         ingredientsSet.add(ingredients);
         ingredientsSet.add(ingredients2);
         ingredientsSet.add(ingredients3);
-     ingredientsSet.add(ingredients4);
+    /*  ingredientsSet.add(ingredients4);
       ingredientsSet.add(ingredients5);
       ingredientsSet.add(ingredients6);
 
-        ingredientsSet.add(ingredients7);
+       ingredientsSet.add(ingredients7);
         ingredientsSet.add(ingredients8);
          ingredientsSet.add(ingredients9);
         ingredientsSet.add(ingredients10);
@@ -101,14 +103,16 @@ class DietTypeRepositoryTest {
         ingredientsSet.add(ingredients15);
         ingredientsSet.add(d);
 
+   */
+
 
        Product product = Product.builder()
 
-               .productName("Würzige Schweinefleisch").calorie("ca. 720 kcal pro Portion")
+               .productName("Che Do den").calorie("ca. 100 kcal ")
                 .ingredients(ingredientsSet)
                 .build();
         DietType dietType = DietType.builder()
-                .dietTypeName("Fleisch")
+                .dietTypeName("Vegan")
                 .productList(List.of(product))
         .build();
 

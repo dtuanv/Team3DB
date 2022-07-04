@@ -28,6 +28,8 @@ public class OrderController {
 
         List<Product> product = productRepository.getAllProduct();
         model.addAttribute("product",product);
+        int count = productRepository.countProductWith("");
+        model.addAttribute("count",count);
         return "orders.html";
 
         }
@@ -44,52 +46,106 @@ public class OrderController {
         System.out.println("check:::"+check);
         if(check==1){
         //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Calorie'";
+            model.addAttribute("errorMessage",message);
             List<Product> product = productRepository.getAllProductWithCal("Calorie");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Calorie");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==2){
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Vegetarisch'";
+            model.addAttribute("errorMessage",message);
             //    System.out.println("checkin:::"+check);
             List<Product> product = productRepository.getAllProductWithCal("Vegetarisch");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Vegetarisch");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==3){
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Fat'";
+            model.addAttribute("errorMessage",message);
             //    System.out.println("checkin:::"+check);
             List<Product> product = productRepository.getAllProductWithCal("Fat");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Fat");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==4){
             //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Glu'";
+            model.addAttribute("errorMessage",message);
             List<Product> product = productRepository.getAllProductWithCal("Glutenfrei");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Glutenfrei");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==5){
             //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Flutarian'";
+            model.addAttribute("errorMessage",message);
             List<Product> product = productRepository.getAllProductWithCal("Flutarian");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Flutarian");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==6){
             //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Hight'";
+            model.addAttribute("errorMessage",message);
             List<Product> product = productRepository.getAllProductWithCal("Hight");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Hight");
+            model.addAttribute("count",count);
             return "orders.html";
         }
         if(check==7){
             //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Fleisch'";
+            model.addAttribute("errorMessage",message);
             List<Product> product = productRepository.getAllProductWithCal("Fleisch");
             model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Fleisch");
+            model.addAttribute("count",count);
             return "orders.html";
         }
-        String message = null;
+
         if(check==99){
-            message = "SELECT * FROM product Inner JOin" +
-                    " product_diet_type USING (product_id) INNER JOIN diet_type USING(diet_type_id)";
+            String message = null;
+            message = "SELECT * FROM  product  INNER JOIN" +
+                    " product_diet_type  USING(product_id)  INNER JOIN  diet_type  USING(diet_type_id)";
             model.addAttribute("errorMessage",message);
-            return "redirect:/order?check=99";
+            int count = productRepository.countProductWith("");
+            model.addAttribute("count",count);
+            List<Product> product = productRepository.getAllProduct();
+            model.addAttribute("product",product);
+            return "orders.html";
         }
         List<Product> product = productRepository.getAllProduct();
         model.addAttribute("product",product);
