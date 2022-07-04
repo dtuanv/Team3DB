@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/succsesful.css">
     <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
@@ -31,6 +32,7 @@
     <p style="font-size: 2em" th:text="'Result : ' +${count}"> <span id="rowcount"></span></p>
     <p align="right"><a style="float:right;text-align:right;" th:href="@{/logout}">Logout</a></p>
 
+
     <div class="row">
         <table class="table table-bordered table-striped">
             <thead>
@@ -40,6 +42,14 @@
                                 name = "firstName" th:value="${firstName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear">Search</button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Category" ></th>
+                    <th>    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option value="1">Nothing</option>
+                            <option value="2">Vegetarian</option>
+                            <option value="3">Vegan</option>
+                        </select>
+                        <label for="floatingSelect">Category</label>
+                    </div></th>
                 </form>
 
             </tr>
