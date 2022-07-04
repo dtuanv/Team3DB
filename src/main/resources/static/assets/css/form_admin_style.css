@@ -188,5 +188,11 @@ color: white;
 a:hover {
   color: black;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
+}
+.text-tu{
+position: absolute;
+right: 10rem;
+top: 18rem;
+text-align: center;
 }

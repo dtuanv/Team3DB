@@ -55,6 +55,7 @@ public class OrderController {
             model.addAttribute("product",product);
             int count = productRepository.countProductWith("Calorie");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","Low-Calorie");
             return "orders.html";
         }
         if(check==2){
@@ -68,6 +69,7 @@ public class OrderController {
             model.addAttribute("product",product);
             int count = productRepository.countProductWith("Vegetarisch");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","Vegetarisch");
             return "orders.html";
         }
         if(check==3){
@@ -81,6 +83,7 @@ public class OrderController {
             model.addAttribute("product",product);
             int count = productRepository.countProductWith("Fat");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","Low-Fat");
             return "orders.html";
         }
         if(check==4){
@@ -94,6 +97,7 @@ public class OrderController {
             model.addAttribute("product",product);
             int count = productRepository.countProductWith("Glutenfrei");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","Glutenfrei");
             return "orders.html";
         }
         if(check==5){
@@ -101,11 +105,12 @@ public class OrderController {
             String message = null;
             message = "SELECT * FROM  product \n INNER JOIN " +
                     " product_diet_type  USING(product_id) \n INNER JOIN" +
-                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Flutarian'";
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Frutarian'";
             model.addAttribute("errorMessage",message);
-            List<Product> product = productRepository.getAllProductWithCal("Flutarian");
+            List<Product> product = productRepository.getAllProductWithCal("Frutarian");
             model.addAttribute("product",product);
-            int count = productRepository.countProductWith("Flutarian");
+            int count = productRepository.countProductWith("Frutarian");
+            model.addAttribute("calorie","Frutarian");
             model.addAttribute("count",count);
             return "orders.html";
         }
@@ -114,12 +119,13 @@ public class OrderController {
             String message = null;
             message = "SELECT * FROM  product \n INNER JOIN " +
                     " product_diet_type  USING(product_id) \n INNER JOIN" +
-                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Hight'";
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'High'";
             model.addAttribute("errorMessage",message);
-            List<Product> product = productRepository.getAllProductWithCal("Hight");
+            List<Product> product = productRepository.getAllProductWithCal("High");
             model.addAttribute("product",product);
-            int count = productRepository.countProductWith("Hight");
+            int count = productRepository.countProductWith("High");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","High-Protein");
             return "orders.html";
         }
         if(check==7){
@@ -133,6 +139,21 @@ public class OrderController {
             model.addAttribute("product",product);
             int count = productRepository.countProductWith("Fleisch");
             model.addAttribute("count",count);
+            model.addAttribute("calorie","Fleisch");
+            return "orders.html";
+        }
+        if(check==8){
+            //    System.out.println("checkin:::"+check);
+            String message = null;
+            message = "SELECT * FROM  product \n INNER JOIN " +
+                    " product_diet_type  USING(product_id) \n INNER JOIN" +
+                    "  diet_type  USING(diet_type_id)\n WHERE diet_type_name LIKE  'Vegan'";
+            model.addAttribute("errorMessage",message);
+            List<Product> product = productRepository.getAllProductWithCal("Vegan");
+            model.addAttribute("product",product);
+            int count = productRepository.countProductWith("Vegan");
+            model.addAttribute("count",count);
+            model.addAttribute("calorie","Vegan");
             return "orders.html";
         }
 

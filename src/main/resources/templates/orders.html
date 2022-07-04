@@ -12,6 +12,7 @@
     <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
     <link rel="stylesheet" href="assets/css/form_admin_style.css">
+    <link rel="stylesheet" href="assets/css/succsesful.css">
 
     <title>Order</title>
     <style>
@@ -30,22 +31,23 @@
 </div>
 </div>
 <div class="container">
-    <p style="font-size: 2em" th:text="'Result : ' +${count}"> <span id="rowcount"></span></p>
-    <p align="right"><a style="float:right;text-align:right;" th:href="@{/logout}">Logout</a></p>
-
-
+    <hr>
+     <p style="font-size: 2em" th:text="'Result : ' +${count}"><span id="rowcount"></span></p>
     <div class="row">
+
         <table class="table table-bordered table-striped">
+            <h1 class="text-tu" th:text="${calorie}"></h1>
             <thead>
             <tr class="filters">
                 <form >
                     <th ><input type="text" class="form-control"
                                 name = "productName" th:value="${productName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
-                    <th><input type="text" class="form-control"   th:value="${calorie}" placeholder="Calorie" ></th>
+                    <th><input type="text" class="form-control"   placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
 
                     <td><select name="forma" id='SelectOption'>
+                    <option value="20"><a href="contact.php">Diet-Type</a></option>
 
                         <option value="1"><a href="contact.php">Low-Calorie</a></option>
                         <option value="2"><a href="contact.php">Vergetarisch</a></option>
@@ -58,6 +60,7 @@
                         <option value="7"><a href="contact.php">Fleisch</a></option>
 
     </div></th>
+    <p align="right"><a style="float:right;text-align:right; text-decoration: none" th:href="@{/logout}">Home</a></p>
     </form>
 
     </tr>
@@ -83,8 +86,10 @@
     <li class="errorMessage"
         th:if="${!#strings.isEmpty(errorMessage)}"
         th:text="${errorMessage}">
+
 </div>
 </div>
+
 </div>
 
 
