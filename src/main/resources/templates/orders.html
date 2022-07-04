@@ -39,14 +39,19 @@
             <tr class="filters">
                 <form th:action="@{/search}" name="search">
                     <th ><input type="text" class="form-control"
-                                name = "firstName" th:value="${firstName}" placeholder="Dish" ></th>
+                                name = "productName" th:value="${productName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear">Search</button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
                         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option value="1">Nothing</option>
-                            <option value="2">Vegetarian</option>
-                            <option value="3">Vegan</option>
+                            <a th:href="@{/order?check=cal}" >  Low_Calorie </a>
+                            <option value="2">Vegetarisch</option>
+                            <option value="3">Low-Fat</option>
+                            <option value="3">Glutenfrei und Vegetarisch</option>
+                            <option value="3">Laktosefrei</option>
+                            <option value="3">Frutarian</option>
+                            <option value="3">Hight Protein</option>
+                            <option value="3">Fleisch</option>
                         </select>
                         <label for="floatingSelect">Category</label>
                     </div></th>
