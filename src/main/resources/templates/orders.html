@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="assets/css/succsesful.css">
     <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form_admin_style.css">
 
     <title>Order</title>
@@ -31,7 +30,6 @@
 </div>
 </div>
 <div class="container">
-    <hr>
     <p style="font-size: 2em" th:text="'Result : ' +${count}"> <span id="rowcount"></span></p>
     <p align="right"><a style="float:right;text-align:right;" th:href="@{/logout}">Logout</a></p>
 
@@ -44,27 +42,21 @@
                     <th ><input type="text" class="form-control"
                                 name = "productName" th:value="${productName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
-                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
+                    <th><input type="text" class="form-control"   th:value="${calorie}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
-                        <<<<<<< HEAD
+
                     <td><select name="forma" id='SelectOption'>
 
                         <option value="1"><a href="contact.php">Low-Calorie</a></option>
                         <option value="2"><a href="contact.php">Vergetarisch</a></option>
+                        <option value="8"><a href="contact.php">Vegan</a></option>
+
                         <option value="3"><a href="contact.php">Low-Fat</a></option>
                         <option value="4"><a href="contact.php">Glutenfrei</a></option>
                         <option value="5"><a href="contact.php">Flutarian</a></option>
                         <option value="6"><a href="contact.php">Hight-Protein</a></option>
                         <option value="7"><a href="contact.php">Fleisch</a></option>
 
-                        =======
-                    <td><select class="form-select" aria-label="Floating label select example" name="forma" id='SelectOption'>
-                        <option value="Home">Home</option>
-                        <option value="Costumers">Costumers</option>
-                        <option value="Sitemap">Sitemap</option>
-                        >>>>>>> origin/main
-                    </select></td><td>
-                    <!--                        <label for="floatingSelect">Category</label>-->
     </div></th>
     </form>
 
@@ -78,7 +70,7 @@
         <td th:text="${inf.productName}"></td>
         <td th:text="${inf.calorie}"></td>
 
-        </i>
+
         <!--         <td th:text="${inf.lastName}"></td>
                  <td th:text="${inf.email}"></td>
                  <td th:text="${inf.gender}"></td>
@@ -90,7 +82,7 @@
     </table>
     <li class="errorMessage"
         th:if="${!#strings.isEmpty(errorMessage)}"
-        th:text="${errorMessage}"><li/>
+        th:text="${errorMessage}">
 </div>
 </div>
 </div>
@@ -148,6 +140,9 @@ try {
   }
   if(val === '7') {
     window.open('is?check=7', '_blank');
+  }
+   if(val === '8') {
+    window.open('is?check=8', '_blank');
   }
   if (val === 'Sitemap') {
     window.open('sitemap.php', '_blank');
