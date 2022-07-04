@@ -84,6 +84,13 @@ public class OrderController {
             model.addAttribute("product",product);
             return "orders.html";
         }
+        String message = null;
+        if(check==99){
+            message = "SELECT * FROM product Inner JOin" +
+                    " product_diet_type USING (product_id) INNER JOIN diet_type USING(diet_type_id)";
+            model.addAttribute("errorMessage",message);
+            return "redirect:/order?check=99";
+        }
         List<Product> product = productRepository.getAllProduct();
         model.addAttribute("product",product);
         return "orders.html";

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/succsesful.css">
     <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form_admin_style.css">
+
     <title>Order</title>
     <style>
     body { background-color: #f7f7f7; }
@@ -37,10 +40,10 @@
         <table class="table table-bordered table-striped">
             <thead>
             <tr class="filters">
-                <form th:action="@{/search}" name="search">
+                <form >
                     <th ><input type="text" class="form-control"
                                 name = "productName" th:value="${productName}" placeholder="Dish" ></th>
-                    <button type="submit" value="Submit" class="clear">Search</button>
+                    <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
                         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -77,6 +80,9 @@
             </tr>
             </tbody>
         </table>
+        <li class="errorMessage"
+            th:if="${!#strings.isEmpty(errorMessage)}"
+            th:text="${errorMessage}"><li/>
     </div>
 </div>
 </div>
