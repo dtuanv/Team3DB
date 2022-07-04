@@ -46,7 +46,7 @@
                     <button type="submit" value="Submit" class="clear"><a th:href="@{is?check=99}">Show Query</a></button>
                     <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Calorie" ></th>
                     <th>    <div class="form-floating">
-                    <td><select name="forma" id='SelectOption'>
+                    <td><select class="form-select" aria-label="Floating label select example" name="forma" id='SelectOption'>
                         <option value="Home"><a href="home.php">Home</a></option>
                         <option value="Costumers"><a href="contact.php">Costumers</a></option>
                         <option value="Sitemap"><a href="sitemap.php">Sitemap</a></option>
@@ -65,7 +65,6 @@
                 <td th:text="${inf.productName}"></td>
                 <td th:text="${inf.calorie}"></td>
 
-                </i>
                 <!--         <td th:text="${inf.lastName}"></td>
                          <td th:text="${inf.email}"></td>
                          <td th:text="${inf.gender}"></td>
@@ -121,7 +120,7 @@ try {
     window.open('customer', '_blank');
   }
   if (val === 'Sitemap') {
-    window.open('sitemap.php', '_blank');
+    window.open('https://www.youtube.com/watch?v=oRdxUFDoQe0&list=RDMM&index=7&ab_channel=michaeljacksonVEVO', '_blank');
   }
 });
 
