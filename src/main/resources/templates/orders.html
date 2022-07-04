@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/succsesful.css">
     <link href='https://css.gg/trash.css' rel='stylesheet'>
     <script src="filter.js"></script>
-    <title>Manager</title>
+    <title>Order</title>
     <style>
     body { background-color: #f7f7f7; }
     .container {margin:150px auto;}
@@ -37,14 +37,9 @@
             <tr class="filters">
                 <form th:action="@{/search}" name="search">
                     <th ><input type="text" class="form-control"
-                                name = "firstName" th:value="${firstName}" placeholder="First Name" ></th>
+                                name = "firstName" th:value="${firstName}" placeholder="Dish" ></th>
                     <button type="submit" value="Submit" class="clear">Search</button>
-
-                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Last Name" ></th>
-
-                    <th><input type="text" class="form-control" name = "email" th:value="${email}" placeholder="Email" ></th>
-                    <th><input type="text" class="form-control" name="gender" th:value="${gender}" placeholder="Gender" ></th>
-                    <th><input type="text" class="form-control" name="city" th:value="${city}" placeholder="City" ></th>
+                    <th><input type="text" class="form-control" name = "lastName" th:value="${lastName}" placeholder="Category" ></th>
                 </form>
 
             </tr>
